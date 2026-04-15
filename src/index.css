@@ -1,0 +1,64 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ── Base ── */
+@layer base {
+  *, *::before, *::after { box-sizing: border-box; }
+
+  html {
+    scroll-behavior: smooth;
+    /* Smooth scroll offset so fixed nav doesn't cover headings */
+    scroll-padding-top: 80px;
+  }
+
+  body {
+    background-color: #060610;
+    color: #f1f5f9;
+    font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar        { width: 5px; }
+  ::-webkit-scrollbar-track  { background: #060610; }
+  ::-webkit-scrollbar-thumb  { background: #00d4ff33; border-radius: 3px; }
+  ::-webkit-scrollbar-thumb:hover { background: #00d4ff66; }
+
+  /* Make dangerouslySetInnerHTML strong tags render correctly */
+  strong { color: #f1f5f9; font-weight: 600; }
+}
+
+/* ── Reusable utilities ── */
+@layer utilities {
+  /* Gradient text: cyan → purple */
+  .text-gradient {
+    background: linear-gradient(135deg, #00d4ff 0%, #8b5cf6 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Card with subtle glow border */
+  .card-glow {
+    background: linear-gradient(135deg, #111127 0%, #0d0d1f 100%);
+    border: 1px solid #1e1e3a;
+    transition: border-color 0.25s, box-shadow 0.25s;
+  }
+  .card-glow:hover {
+    border-color: #00d4ff44;
+    box-shadow: 0 0 28px #00d4ff0d;
+  }
+
+  /* Animated dot-grid background */
+  .grid-bg {
+    background-image:
+      linear-gradient(rgba(0,212,255,0.025) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0,212,255,0.025) 1px, transparent 1px);
+    background-size: 55px 55px;
+  }
+
+  /* Cyan text glow */
+  .cyan-glow { text-shadow: 0 0 18px #00d4ffaa; }
+}
