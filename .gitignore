@@ -55,16 +55,4 @@ Thumbs.db
 *.iml
 
 # =====================
-# ESLINT / TOOLING CACHE
-# =====================
-.eslintcache
-
-# =====================
-# NEXT.JS (ONLY if you use it)
-# =====================
-.next/
-
-# =====================
-# OPTIONAL: STORYBOOK
-# =====================
-storybook-static/
+DEPLOY_GUIDE.md
